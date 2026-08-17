@@ -8,11 +8,11 @@ function ExperienceFrame({ id, children }: { id: string; children: ReactNode }) 
   return (
     <div className={`experience-canvas creative-canvas theme-${id}`}>
       <div className="experience-grid" />
-      <div className="experience-label top-left">ZDM SELECTED / {id.toUpperCase()}</div>
+      <div className="experience-label top-left">值得买精选 / 交互实验</div>
       <div className="experience-label top-right">ZDM CREATIVE HUB</div>
       {children}
-      <div className="experience-label bottom-left"><i /> INTERACTIVE</div>
-      <div className="experience-label bottom-right">POINTER + KEYBOARD</div>
+      <div className="experience-label bottom-left"><i /> 可交互</div>
+      <div className="experience-label bottom-right">指针 + 键盘</div>
     </div>
   )
 }
@@ -38,9 +38,9 @@ function ProductFanExperience() {
         <CardSpread products={products} arc={arc} lift={lift} expanded={expanded} onExpandedChange={setExpanded} />
       </ExperienceFrame>
       <div className="case-controls" aria-label="体验参数">
-        <label><span>SPREAD <output>{arc}°</output></span><input aria-label="展开弧度" type="range" min="54" max="104" value={arc} onChange={(event) => setArc(Number(event.target.value))} /></label>
-        <label><span>LIFT <output>{lift}px</output></span><input aria-label="卡片抬升" type="range" min="16" max="60" value={lift} onChange={(event) => setLift(Number(event.target.value))} /></label>
-        <button type="button" onClick={replay}><RotateCcw size={14} /> REPLAY</button>
+        <label><span>展开 <output>{arc}°</output></span><input aria-label="展开弧度" type="range" min="54" max="104" value={arc} onChange={(event) => setArc(Number(event.target.value))} /></label>
+        <label><span>抬升 <output>{lift}px</output></span><input aria-label="卡片抬升" type="range" min="16" max="60" value={lift} onChange={(event) => setLift(Number(event.target.value))} /></label>
+        <button type="button" onClick={replay}><RotateCcw size={14} /> 重播</button>
       </div>
     </>
   )
@@ -91,7 +91,7 @@ function SkewedCarouselExperience() {
           })}
         </motion.div>
       </ExperienceFrame>
-      <CarouselControls active={active} total={total} onMove={move} label="DRAG OR SCROLL" />
+      <CarouselControls active={active} total={total} onMove={move} label="拖拽或滚动" />
     </>
   )
 }
@@ -128,7 +128,7 @@ function TumbleCarouselExperience() {
           </AnimatePresence>
         </div>
       </ExperienceFrame>
-      <CarouselControls active={active} total={products.length} onMove={move} label="TUMBLE TO NEXT" />
+      <CarouselControls active={active} total={products.length} onMove={move} label="翻滚至下一项" />
     </>
   )
 }
@@ -173,14 +173,14 @@ function ModalCardsExperience() {
             <motion.div className="product-modal-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onPointerDown={(event) => event.target === event.currentTarget && setSelected(null)}>
               <motion.article layoutId={`modal-${selected.id}`} className="product-modal" role="dialog" aria-modal="true" aria-label={`${selected.title} 商品详情`}>
                 <img src={selected.image} alt="" style={{ objectPosition: selected.position }} />
-                <div><small>ZDM SELECTED · {selected.kicker}</small><h2>{selected.title}</h2><p>精心挑选的设计对象，以更沉浸的方式快速查看材质、细节与推荐价格。</p><strong>{selected.price}</strong></div>
+                <div><small>值得买精选 · {selected.kicker}</small><h2>{selected.title}</h2><p>精心挑选的设计对象，以更沉浸的方式快速查看材质、细节与推荐价格。</p><strong>{selected.price}</strong></div>
                 <button type="button" onClick={() => setSelected(null)} aria-label="关闭详情"><X size={16} /></button>
               </motion.article>
             </motion.div>
           )}
         </AnimatePresence>
       </ExperienceFrame>
-      <div className="case-controls case-status-line"><span>SELECT A CARD TO OPEN</span><output>ESC TO CLOSE</output></div>
+      <div className="case-controls case-status-line"><span>选择卡片打开</span><output>ESC 关闭</output></div>
     </>
   )
 }
@@ -204,13 +204,13 @@ function DepthCardExperience() {
         <div className="depth-stage" onPointerMove={move} onPointerLeave={() => setPoint({ x: 50, y: 50 })}>
           <motion.article className="depth-product" animate={{ transform }} transition={{ type: 'spring', stiffness: 120, damping: 18 }}>
             <div className="depth-backdrop" style={{ transform: `translate(${(point.x - 50) * -0.08}px, ${(point.y - 50) * -0.08}px)` }} />
-            <img src={products[6].image} alt="Moka Coffee Maker" style={{ transform: `translate(${(point.x - 50) * -0.16}px, ${(point.y - 50) * -0.16}px) scale(1.08)` }} />
+            <img src={products[6].image} alt="摩卡咖啡壶" style={{ transform: `translate(${(point.x - 50) * -0.16}px, ${(point.y - 50) * -0.16}px) scale(1.08)` }} />
             <div className="depth-spot" style={{ background: `radial-gradient(circle at ${point.x}% ${point.y}%, rgba(255,255,255,.34), transparent 34%)` }} />
-            <div className="depth-copy" style={{ transform: `translate(${(point.x - 50) * 0.12}px, ${(point.y - 50) * 0.12}px)` }}><small>HOME / OBJECT 005</small><h2>Slow ritual.<br />Deep focus.</h2><strong>¥429</strong></div>
+            <div className="depth-copy" style={{ transform: `translate(${(point.x - 50) * 0.12}px, ${(point.y - 50) * 0.12}px)` }}><small>家居 / 商品 005</small><h2>慢下来，<br />看得更深。</h2><strong>¥429</strong></div>
           </motion.article>
         </div>
       </ExperienceFrame>
-      <div className="case-controls depth-controls"><label><span>DEPTH <output>{intensity}°</output></span><input aria-label="透视强度" type="range" min="4" max="24" value={intensity} onChange={(event) => setIntensity(Number(event.target.value))} /></label><span>MOVE POINTER ACROSS THE OBJECT</span></div>
+      <div className="case-controls depth-controls"><label><span>景深 <output>{intensity}°</output></span><input aria-label="透视强度" type="range" min="4" max="24" value={intensity} onChange={(event) => setIntensity(Number(event.target.value))} /></label><span>移动指针探索商品层次</span></div>
     </>
   )
 }
@@ -230,18 +230,18 @@ function WarpedCardExperience() {
       <ExperienceFrame id="warped-card">
         <div className="warp-stage">
           <div className="warped-product" onPointerMove={move} onPointerEnter={() => setHovered(true)} onPointerLeave={() => setHovered(false)}>
-            <img src={image} alt="Mirrorless Camera" />
+            <img src={image} alt="微单相机" />
             <motion.span
               className="warp-lens"
               animate={{ left: `${point.x}%`, top: `${point.y}%`, scale: hovered ? 1 : 0.15, opacity: hovered ? 1 : 0 }}
               transition={{ type: 'spring', stiffness: 170, damping: 24 }}
               style={{ backgroundImage: `url("${image}")`, backgroundPosition: `${point.x}% ${point.y}%`, backgroundSize: `${strength * 118}%` }}
             />
-            <div><small>OPTICAL STUDY / 006</small><h2>Look closer.</h2><strong>SONY · 18—55</strong></div>
+            <div><small>光学实验 / 006</small><h2>靠近一点。</h2><strong>SONY · 18—55</strong></div>
           </div>
         </div>
       </ExperienceFrame>
-      <div className="case-controls depth-controls"><label><span>WARP <output>{strength.toFixed(2)}×</output></span><input aria-label="形变强度" type="range" min="1.04" max="1.45" step="0.01" value={strength} onChange={(event) => setStrength(Number(event.target.value))} /></label><span>MOVE POINTER TO BEND THE IMAGE</span></div>
+      <div className="case-controls depth-controls"><label><span>形变 <output>{strength.toFixed(2)}×</output></span><input aria-label="形变强度" type="range" min="1.04" max="1.45" step="0.01" value={strength} onChange={(event) => setStrength(Number(event.target.value))} /></label><span>移动指针弯折图像</span></div>
     </>
   )
 }

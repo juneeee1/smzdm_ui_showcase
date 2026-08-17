@@ -43,7 +43,7 @@ export function CasePreviewArt({ item }: { item: CreativeCase }) {
       <div className="preview-depth" aria-hidden="true">
         <span className="preview-depth-shadow" />
         <img src={products[6].image} alt="" />
-        <strong>OBJECT<br />DEPTH</strong>
+        <strong>商品<br />景深</strong>
       </div>
     )
   }

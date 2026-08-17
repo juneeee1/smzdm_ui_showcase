@@ -16,11 +16,11 @@ export type Product = {
 }
 
 export const products: Product[] = [
-  { id: 'headphones', title: 'Studio Headphones', price: '¥2,899', kicker: 'AUDIO', image: headphones, position: '50% 50%' },
-  { id: 'camera', title: 'Mirrorless Camera', price: '¥8,499', kicker: 'IMAGING', image: camera, position: '50% 50%' },
-  { id: 'watch', title: 'Automatic Watch', price: '¥4,680', kicker: 'STYLE', image: watch, position: '50% 50%' },
-  { id: 'perfume', title: 'Eau de Parfum', price: '¥1,260', kicker: 'LIFESTYLE', image: perfume, position: '50% 50%' },
-  { id: 'sneaker', title: 'Performance Sneaker', price: '¥899', kicker: 'SPORT', image: sneaker, position: '50% 50%' },
-  { id: 'keyboard', title: 'Mechanical Keyboard', price: '¥699', kicker: 'DIGITAL', image: keyboard, position: '50% 54%' },
-  { id: 'coffee', title: 'Moka Coffee Maker', price: '¥429', kicker: 'HOME', image: coffeeMaker, position: '50% 50%' },
+  { id: 'headphones', title: '头戴式监听耳机', price: '¥2,899', kicker: '音频', image: headphones, position: '50% 50%' },
+  { id: 'camera', title: '微单相机', price: '¥8,499', kicker: '影像', image: camera, position: '50% 50%' },
+  { id: 'watch', title: '自动机械腕表', price: '¥4,680', kicker: '穿搭', image: watch, position: '50% 50%' },
+  { id: 'perfume', title: '淡香精', price: '¥1,260', kicker: '生活', image: perfume, position: '50% 50%' },
+  { id: 'sneaker', title: '轻量跑鞋', price: '¥899', kicker: '运动', image: sneaker, position: '50% 50%' },
+  { id: 'keyboard', title: '机械键盘', price: '¥699', kicker: '数码', image: keyboard, position: '50% 54%' },
+  { id: 'coffee', title: '摩卡咖啡壶', price: '¥429', kicker: '家居', image: coffeeMaker, position: '50% 50%' },
 ]

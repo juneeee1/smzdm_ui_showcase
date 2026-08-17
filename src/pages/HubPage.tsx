@@ -8,16 +8,16 @@ export function HubPage() {
     <main className="hub-page">
       <header className="hub-header">
         <BrandMark />
-        <span>{String(creativeCases.length).padStart(2, '0')} SELECTED CASE</span>
+        <span>{String(creativeCases.length).padStart(2, '0')} 个精选案例</span>
       </header>
 
       <section className="hub-intro">
         <p>ZDM Creative Hub</p>
-        <h1>Selected Cases</h1>
-        <span>UI · INTERACTION · VISUAL</span>
+        <h1>精选案例</h1>
+        <span>界面 · 交互 · 视觉</span>
       </section>
 
-      <section className="case-gallery" aria-label="Creative cases">
+      <section className="case-gallery" aria-label="创意案例">
         <div className="gallery-index">
           <span>01</span>
           <i />
@@ -28,7 +28,7 @@ export function HubPage() {
       </section>
 
       <footer className="hub-footer">
-        <span>CURATED FOR SMZDM</span>
+        <span>为值得买精选</span>
         <span>2026</span>
       </footer>
     </main>
