@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react'
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Product } from '../data/products'
 import { motionSprings } from '../motion/tokens'
 
@@ -41,7 +41,7 @@ export function CardSpread({ products, arc, lift, expanded, onExpandedChange }: 
         const availableSpread = Math.max(64, layout.stageWidth / 2 - layout.cardWidth * 0.72 - 18)
         const openX = progress * Math.min(availableSpread, arc * 2.8)
         const closedX = progress * 72
-        const curveY = expanded ? Math.pow(Math.abs(progress), 1.45) * 86 : Math.abs(progress) * 12
+        const curveY = expanded ? Math.pow(Math.abs(progress), 1.45) * 58 : Math.abs(progress) * 10
 
         return { fromCenter, angle, x: expanded ? openX : closedX, y: curveY }
       }),
@@ -84,11 +84,7 @@ export function CardSpread({ products, arc, lift, expanded, onExpandedChange }: 
               scale: isActive ? 1.055 : 1,
             }}
             transition={reduceMotion ? { duration: 0 } : { ...motionSprings.interface, delay: activeIndex === null ? index * 0.035 : 0 }}
-            style={{
-              zIndex: isActive ? 30 : index + 1,
-              '--card-image': `url("${product.image}")`,
-              '--card-position': product.position ?? '50% 50%',
-            } as CSSProperties}
+            style={{ zIndex: isActive ? 30 : index + 1 }}
             onPointerEnter={() => setActiveIndex(index)}
             onPointerLeave={() => setActiveIndex(null)}
             onFocus={() => {

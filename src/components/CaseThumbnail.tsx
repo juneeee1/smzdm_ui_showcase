@@ -18,8 +18,6 @@ export function CaseThumbnail({ item }: { item: CreativeCase }) {
                 '--preview-angle': `${(index - 3) * 9}deg`,
                 '--preview-x': `${(index - 3) * 38}px`,
                 '--preview-y': `${Math.abs(index - 3) * 10}px`,
-                '--card-image': `url("${product.image}")`,
-                '--card-position': product.position ?? '50% 50%',
               } as CSSProperties}
             >
               <img src={product.image} alt="" style={{ objectPosition: product.position }} />

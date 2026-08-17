@@ -16,11 +16,11 @@ export type Product = {
 }
 
 export const products: Product[] = [
-  { id: 'headphones', title: 'Studio Headphones', price: '¥2,899', kicker: 'AUDIO', image: headphones, position: '50% 54%' },
+  { id: 'headphones', title: 'Studio Headphones', price: '¥2,899', kicker: 'AUDIO', image: headphones, position: '50% 50%' },
   { id: 'camera', title: 'Mirrorless Camera', price: '¥8,499', kicker: 'IMAGING', image: camera, position: '50% 50%' },
-  { id: 'watch', title: 'Automatic Watch', price: '¥4,680', kicker: 'STYLE', image: watch, position: '50% 46%' },
+  { id: 'watch', title: 'Automatic Watch', price: '¥4,680', kicker: 'STYLE', image: watch, position: '50% 50%' },
   { id: 'perfume', title: 'Eau de Parfum', price: '¥1,260', kicker: 'LIFESTYLE', image: perfume, position: '50% 50%' },
   { id: 'sneaker', title: 'Performance Sneaker', price: '¥899', kicker: 'SPORT', image: sneaker, position: '50% 50%' },
-  { id: 'keyboard', title: 'Mechanical Keyboard', price: '¥699', kicker: 'DIGITAL', image: keyboard, position: '50% 55%' },
-  { id: 'coffee', title: 'Espresso Machine', price: '¥3,299', kicker: 'HOME', image: coffeeMaker, position: '50% 50%' },
+  { id: 'keyboard', title: 'Mechanical Keyboard', price: '¥699', kicker: 'DIGITAL', image: keyboard, position: '50% 54%' },
+  { id: 'coffee', title: 'Moka Coffee Maker', price: '¥429', kicker: 'HOME', image: coffeeMaker, position: '50% 50%' },
 ]

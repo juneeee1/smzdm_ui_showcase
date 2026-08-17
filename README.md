@@ -33,10 +33,10 @@ npm run build:share
 
 首个 `Product Fan` 案例参考 React Bits Pro 的 Card Spread 公开交互表现独立实现，没有复制其付费源码。演示图片来自 Unsplash 免费图库，仅用于内部设计展示：
 
-- Headphones — Petri R
-- Camera — Vanilla Bear Films
-- Watch — Panagiotis Falcos
-- Perfume — Jessica Weiller
-- Sneaker — Sou Jest
-- Keyboard — Jeremy Rorimpandey
-- Coffee maker — César Cabrera
+- [Headphones](https://images.unsplash.com/photo-1594215741864-6024bef4f3e3)
+- [Camera](https://images.unsplash.com/photo-1632251350207-918fb9b74249)
+- [Watch](https://images.unsplash.com/photo-1668930199744-3f3aa689ceed)
+- [Perfume](https://images.unsplash.com/photo-1676950933747-5f886cadf014)
+- [Sneaker](https://unsplash.com/photos/DXTT02-ee-8)
+- [Keyboard](https://unsplash.com/photos/rW2KRSx2vJs)
+- [Coffee maker](https://images.unsplash.com/photo-1673694801488-36d2ceb295f1)
