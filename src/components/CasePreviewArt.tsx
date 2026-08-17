@@ -48,6 +48,51 @@ export function CasePreviewArt({ item }: { item: CreativeCase }) {
     )
   }
 
+  if (item.id === 'bounce-cards') {
+    return (
+      <div className="preview-bounce" aria-hidden="true">
+        {products.slice(0, 5).map((product) => (
+          <img src={product.image} alt="" key={product.id} />
+        ))}
+      </div>
+    )
+  }
+
+  if (item.id === 'chroma-grid') {
+    return (
+      <div className="preview-chroma" aria-hidden="true">
+        {products.slice(0, 6).map((product, index) => (
+          <span key={product.id} style={{ '--chroma-hue': `${index * 52}deg` } as CSSProperties}>
+            <img src={product.image} alt="" />
+          </span>
+        ))}
+        <i />
+      </div>
+    )
+  }
+
+  if (item.id === 'profile-card') {
+    return (
+      <div className="preview-profile" aria-hidden="true">
+        <div>
+          <img src={products[1].image} alt="" />
+          <i />
+          <span><small>值得买影像研究所</small><strong>全息身份</strong></span>
+        </div>
+      </div>
+    )
+  }
+
+  if (item.id === 'stack') {
+    return (
+      <div className="preview-stack" aria-hidden="true">
+        {products.slice(2, 6).map((product) => (
+          <img src={product.image} alt="" key={product.id} />
+        ))}
+      </div>
+    )
+  }
+
   return (
     <div className="preview-warp" aria-hidden="true">
       <img src={products[1].image} alt="" />

@@ -12,6 +12,10 @@ export function CaseDetailPage({ slug }: { slug: string }) {
     'modal-cards': '点击展开',
     'depth-card': '移动查看景深',
     'warped-card': '移动产生形变',
+    'bounce-cards': '悬停聚焦',
+    'chroma-grid': '移动唤醒色彩',
+    'profile-card': '移动折射光谱',
+    stack: '拖拽轮换',
   }
 
   return (

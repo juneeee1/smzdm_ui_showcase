@@ -1,21 +1,10 @@
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { ArrowLeft, ArrowRight, RotateCcw, X } from 'lucide-react'
-import { useEffect, useMemo, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from 'react'
+import { useEffect, useMemo, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import { products } from '../data/products'
+import { AdditionalCaseExperience } from './AdditionalCaseExperiences'
 import { CardSpread } from './CardSpread'
-
-function ExperienceFrame({ id, children }: { id: string; children: ReactNode }) {
-  return (
-    <div className={`experience-canvas creative-canvas theme-${id}`}>
-      <div className="experience-grid" />
-      <div className="experience-label top-left">值得买精选 / 交互实验</div>
-      <div className="experience-label top-right">ZDM CREATIVE HUB</div>
-      {children}
-      <div className="experience-label bottom-left"><i /> 可交互</div>
-      <div className="experience-label bottom-right">指针 + 键盘</div>
-    </div>
-  )
-}
+import { ExperienceFrame } from './ExperienceFrame'
 
 function ProductFanExperience() {
   const [arc, setArc] = useState(82)
@@ -252,5 +241,6 @@ export function CaseExperience({ caseId }: { caseId: string }) {
   if (caseId === 'modal-cards') return <ModalCardsExperience />
   if (caseId === 'depth-card') return <DepthCardExperience />
   if (caseId === 'warped-card') return <WarpedCardExperience />
+  if (['bounce-cards', 'chroma-grid', 'profile-card', 'stack'].includes(caseId)) return <AdditionalCaseExperience caseId={caseId} />
   return <ProductFanExperience />
 }
