@@ -21,7 +21,7 @@ export function HubPage() {
         <div className="gallery-index">
           <span>01</span>
           <i />
-          <span>01</span>
+          <span>{String(creativeCases.length).padStart(2, '0')}</span>
           <ArrowRight size={18} />
         </div>
         {creativeCases.map((item) => <CaseThumbnail item={item} key={item.id} />)}

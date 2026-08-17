@@ -2,6 +2,8 @@
 
 值得买内部高质量 UI、交互与视觉实验案例库。首页提供简洁的案例索引，点击缩略图进入独立体验页。
 
+当前案例：Product Fan、Skewed Selects、Tumble Picks、Quick View、Object Depth、Product Lens。
+
 ## 开发
 
 ```bash
