@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import type { Product } from '../data/products'
 import { motionSprings } from '../motion/tokens'
 
@@ -84,7 +84,11 @@ export function CardSpread({ products, arc, lift, expanded, onExpandedChange }: 
               scale: isActive ? 1.055 : 1,
             }}
             transition={reduceMotion ? { duration: 0 } : { ...motionSprings.interface, delay: activeIndex === null ? index * 0.035 : 0 }}
-            style={{ zIndex: isActive ? 30 : index + 1 }}
+            style={{
+              zIndex: isActive ? 30 : index + 1,
+              '--card-image': `url("${product.image}")`,
+              '--card-position': product.position ?? '50% 50%',
+            } as CSSProperties}
             onPointerEnter={() => setActiveIndex(index)}
             onPointerLeave={() => setActiveIndex(null)}
             onFocus={() => {

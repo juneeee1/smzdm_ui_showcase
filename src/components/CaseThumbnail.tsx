@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
+import type { CSSProperties } from 'react'
 import type { CreativeCase } from '../cases/registry'
 import { products } from '../data/products'
 
@@ -9,18 +10,20 @@ export function CaseThumbnail({ item }: { item: CreativeCase }) {
         <div className="preview-glow" />
         <div className="preview-fan" aria-hidden="true">
           {products.map((product, index) => (
-            <img
+            <span
+              className="preview-card"
               key={product.id}
-              src={product.image}
-              alt=""
               style={{
                 '--preview-index': index,
                 '--preview-angle': `${(index - 3) * 9}deg`,
                 '--preview-x': `${(index - 3) * 38}px`,
                 '--preview-y': `${Math.abs(index - 3) * 10}px`,
-                objectPosition: product.position,
-              } as React.CSSProperties}
-            />
+                '--card-image': `url("${product.image}")`,
+                '--card-position': product.position ?? '50% 50%',
+              } as CSSProperties}
+            >
+              <img src={product.image} alt="" style={{ objectPosition: product.position }} />
+            </span>
           ))}
         </div>
         <span className="case-open"><ArrowUpRight size={18} /></span>
